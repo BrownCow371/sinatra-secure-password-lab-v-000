@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     if user
       user.save
     else
-      erb :failure
+      redirect "/failure"
     end
   end
 
