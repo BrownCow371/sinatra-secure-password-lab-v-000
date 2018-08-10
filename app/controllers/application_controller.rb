@@ -18,7 +18,12 @@ class ApplicationController < Sinatra::Base
 
   post "/signup" do
     #your code here
-
+    user = User.new(params)
+    if user
+      user.save
+    else
+      erb :failure
+    end
   end
 
   get '/account' do
